@@ -2,7 +2,7 @@
 # Multiplatform application core
 Based in MScript for scripts *.arns.
 
-## Syntaxis
+## Syntax
 A free code organization. You have to use ";" and define parameters with "". You can organize like this three examples or other ways
 ```
 Instruction "Parameter","Parameter";
@@ -17,4 +17,8 @@ Argon brings some functions integrated but you can add your own instructions to 
 | Print | Text (String)  |
 | Println  | Text (String)  |
 | Font | Color (String)  |
-| Start | FileName (String) ExecutionArgs (String)  |
+| Start | FileName (String), ExecutionArgs (String)  |
+
+## Wait
+Remind that this is only an a experimental version in development. There have bugs and a few things to use. 
+More things are comming soon.
