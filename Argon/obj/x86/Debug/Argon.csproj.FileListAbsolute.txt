@@ -1,0 +1,6 @@
+/home/asier/Projects/Argon/Argon/bin/Debug/Argon.exe
+/home/asier/Projects/Argon/Argon/bin/Debug/Argon.pdb
+/home/asier/Projects/Argon/Argon/obj/x86/Debug/Argon.csprojAssemblyReference.cache
+/home/asier/Projects/Argon/Argon/obj/x86/Debug/Argon.csproj.CoreCompileInputs.cache
+/home/asier/Projects/Argon/Argon/obj/x86/Debug/Argon.exe
+/home/asier/Projects/Argon/Argon/obj/x86/Debug/Argon.pdb

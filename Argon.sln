@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argon", "Argon\Argon.csproj", "{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}.Debug|x86.ActiveCfg = Debug|x86
+		{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}.Debug|x86.Build.0 = Debug|x86
+		{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}.Release|x86.ActiveCfg = Release|x86
+		{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
