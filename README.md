@@ -13,6 +13,8 @@ Instruction ("Parameter","Parameter");
 ```
 Argon brings some functions integrated but you can add your own instructions to Argon core to extend his functions
 | Funtion | Aruments |
-| ------------- | ------------- |
+| ------------- | ------------------ |
 | Print | Text (String)  |
 | Println  | Text (String)  |
+| Font | Color (String)  |
+| Start | FileName (String) ExecutionArgs (String)  |
