@@ -2,7 +2,7 @@ echo "Update Commit:"
 read commit
 git init
 git add .
-git remove "Upload.sh"
+git rm "Upload.sh"
 git commit -m "$commit"
 git remote add origin "https://github.com/Asierso/Argon.git"
 echo "Credendials:"
