@@ -1,6 +1,11 @@
 ## Argon / Open ARN
 # Multiplatform application core
-Based in MScript for scripts .arns
+Based in MScript for scripts *.arns. A free code organization
 ```
-AA
+Instruction "Parameter","Parameter";
+
+Instruction "Parameter" "Parameter";
+
+Instruction ("Parameter","Parameter");
+
 ```
