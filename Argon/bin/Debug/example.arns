@@ -1,3 +1,26 @@
+print.line "Argon test";
+
+Color test
+
 font "red";
-printline "ABC";
-start "python3","ui.py";
+print.line "Im color";
+font "blue";
+print.line "Im color";
+font "green";
+print.line "Im color";
+font "white";
+
+Vars test
+
+var "age","20";
+print "Im ";
+print "$age";
+print.line " years old";
+
+File test
+
+var "fileName","out.txt";
+file.write "$fileName","Im in a text file called ";
+file.read "$fileName","fileContent";
+print "$fileContent";
+print.line "$fileName";

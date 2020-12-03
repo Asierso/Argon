@@ -13,11 +13,18 @@ Instruction ("Parameter","Parameter");
 ```
 Argon brings some functions integrated but you can add your own instructions to Argon core to extend his functions
 | Funtion | Aruments |
-| ------------- | ------------------ |
-| Print | Text (String)  |
-| Println  | Text (String)  |
-| Font | Color (String)  |
-| Start | FileName (String), ExecutionArgs (String)  |
+| ---------------- | ------------------ |
+| print | Text (String)  |
+| print.line  | Text (String)  |
+| font | Color (String)  |
+| start | FileName (String), ExecutionArgs (String)  |
+| file.write | FileName (String), Text (String)  |
+| file.write.line | FileName (String), Text (String)  |
+| file.read | FileName (String), Variable (Var)  |
+| file.read.line | FileName (String), Variable (Var)  |
+| var | VariableName (Var), Value (String/Int)  |
+
+
 
 ## Wait
 Remind that this is only an a experimental version in development. There have bugs and a few things to use. 

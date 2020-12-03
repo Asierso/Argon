@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Argon/Dependences.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Argon/Memory.cs">
     <Files>
       <File FileName="Argon/Program.cs" Line="23" Column="14" />
-      <File FileName="Argon/FilesManager.cs" Line="4" Column="2" />
+      <File FileName="Argon/FilesManager.cs" Line="12" Column="30" />
       <File FileName="Argon/Interpreter.cs" Line="14" Column="61" />
       <File FileName="Argon/Error.cs" Line="18" Column="44" />
-      <File FileName="Argon/Methods.cs" Line="56" Column="1" />
+      <File FileName="Argon/Methods.cs" Line="57" Column="27" />
       <File FileName="Argon/ArgonLine.cs" Line="17" Column="1" />
-      <File FileName="Argon/Dependences.cs" Line="15" Column="13" />
+      <File FileName="Argon/Memory.cs" Line="2" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +15,7 @@
           <Node name="Argon" expanded="True">
             <Node name="Argon" expanded="True">
               <Node name="Properties" expanded="True" />
-              <Node name="Dependences.cs" selected="True" />
+              <Node name="Memory.cs" selected="True" />
             </Node>
           </Node>
         </State>
