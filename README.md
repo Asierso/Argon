@@ -24,8 +24,10 @@ Argon brings some functions integrated but you can add your own instructions to 
 | file.read.line | FileName (String), Variable (Var)  |
 | var | VariableName (Var), Value (String/Int)  |
 
-
-
+To call variable, if their use is not explicit, you can called using this structure similar like php
+```
+ Instruction "$Variable"
+```
 ## Wait
 Remind that this is only an a experimental version in development. There have bugs and a few things to use. 
 More things are comming soon.
