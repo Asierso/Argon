@@ -26,7 +26,7 @@ Argon brings some functions integrated but you can add your own instructions to 
 
 To call variable, if their use is not explicit, you can called using this structure similar like php
 ```
- Instruction "$Variable"
+ Instruction "$Variable";
 ```
 ## Wait
 Remind that this is only an a experimental version in development. There have bugs and a few things to use. 
