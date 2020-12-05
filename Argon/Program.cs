@@ -14,9 +14,10 @@ namespace Argon
             }
             else
             {
-                Console.WriteLine("Argon Console");
+                Console.WriteLine("Argon file chooser");
                 Console.Write("Select  file (.arns is not necesary to put):");
                 string file = Console.ReadLine();
+                Memory.CurrentFile = file;
                 FileManager fm = new FileManager(file + ".arns");
                 Interpreter interpreter = new Interpreter(fm.Read());
                 interpreter.Run();

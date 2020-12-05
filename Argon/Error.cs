@@ -18,6 +18,15 @@ namespace Argon
             Console.ForegroundColor = fore;
             SaveLogs();
         }
+        public Error(string fileName) //Call error
+        {
+            ConsoleColor fore = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(fileName + " class not exists");
+            Console.ForegroundColor = fore;
+            errorException = new MissingMethodException();
+            SaveLogs();
+        }
         private void SaveLogs()
         {
             FileManager fmanager = new FileManager("errorlogs.log");

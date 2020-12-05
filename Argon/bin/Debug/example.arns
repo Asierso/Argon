@@ -24,3 +24,16 @@ file.write "$fileName","Im in a text file called ";
 file.read "$fileName","fileContent";
 print "$fileContent";
 print.line "$fileName";
+
+Functions
+
+function.external "external";
+print.line "Conserved changes";
+
+If Test
+
+function.open "iftest";
+print "Thats true";
+function.close "iftest";
+if "0" "==" "0" "iftest()";
+

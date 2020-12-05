@@ -1,0 +1,2 @@
+font "red";
+print.line "External class";

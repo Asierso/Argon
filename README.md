@@ -23,6 +23,11 @@ Argon brings some functions integrated but you can add your own instructions to 
 | file.read | FileName (String), Variable (Var)  |
 | file.read.line | FileName (String), Variable (Var)  |
 | var | VariableName (Var), Value (String/Int)  |
+| function | FunctionName (Function)  |
+| function.external | ExternalFile (Arns)  |
+| function.open | FunctionName (Function)  |
+| function.close | FunctionName (Function)  |
+| if | ValueA (String/Int), Comparrator (Enum), ValueB (String/Int), Function (Function)  |
 
 To call variable, if their use is not explicit, you can called using this structure similar like php
 ```

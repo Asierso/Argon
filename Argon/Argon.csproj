@@ -40,6 +40,7 @@
     <Compile Include="Methods.cs" />
     <Compile Include="ArgonLine.cs" />
     <Compile Include="Memory.cs" />
+    <Compile Include="Function.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Nitrogen\" />

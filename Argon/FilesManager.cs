@@ -53,6 +53,11 @@ namespace Argon
             stw.WriteLine(text);
             stw.Close();
         }
+        public bool Exists()
+        {
+            if (File.Exists(file)) return true; else return false;
+        }
         public void SetFile(string file) => this.file = file;
+
     }
 }
