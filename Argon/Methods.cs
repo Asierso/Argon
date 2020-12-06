@@ -6,7 +6,7 @@ namespace Argon
     public class Methods
     {
         protected ArgonLine scriptLine;
-        protected string[] methods = {"//", "print.line", "print", "font" , "file.write.line", "file.write", "file.read.line","file.read", "var" , "function.external", "if" , "function.open" , "function.close","function", "start" };
+        protected string[] methods = {"//", "print.line", "print", "font" , "file.write.line", "file.write", "file.read.line","file.read", "var" , "function.external", "if" , "function.open" , "function.close","function", "start" , "network.download.text", "network.download.file" , "math.sum", "math.rest", "math.multiply", "math.divide" , "math.sqrt", "join"};
         public Methods(ArgonLine scriptLine)
         {
             this.scriptLine = scriptLine;
@@ -22,9 +22,13 @@ namespace Argon
                 }
             }
         }
+        #region MethodsList
         public virtual void ExecuteThing(string methodSingle)
         {
             FileManager fileManager = new FileManager(null);
+            Network network = new Network(null);
+            int[] numbers = new int[2];
+            string[] texts = new string[2];
             Error error;
             switch (methodSingle)
             {
@@ -297,16 +301,187 @@ namespace Argon
                 case "function":
                     if (Memory.LockedCode == false)
                     {
-                        if (scriptLine.GetParameters()[0].Contains("()"))
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })) && Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })].Contains("()"))
+                        {
+                            Interpreter interpreter = new Interpreter(Memory.FunctionList[Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] {'$' })].TrimEnd(new char[] { '(', ')' })]);
+                            interpreter.Run();
+                        }
+                        else if (scriptLine.GetParameters()[0].Contains("()"))
                         {
                             Interpreter interpreter = new Interpreter(Memory.FunctionList[scriptLine.GetParameters()[0].TrimEnd(new char[] { '(', ')' })]);
                             interpreter.Run();
                         }
+                        else
+                        {
+                            //Function error
+                        }
+                    }
+                    break;
+                case "network.download.text":
+                    if (Memory.LockedCode == false)
+                    {
+                        if(scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            network.SetUrl(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                            Memory.VarList[scriptLine.GetParameters()[1]] = network.DownloadString();
+                        }
+                        else
+                        {
+                            network.SetUrl(scriptLine.GetParameters()[0]);
+                            Memory.VarList[scriptLine.GetParameters()[1]] = network.DownloadString();
+                        }
+                    }
+                    break;
+                case "network.download.file":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            network.SetUrl(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            network.SetUrl(scriptLine.GetParameters()[0]);
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                             network.DownloadFile(Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                             network.DownloadFile(scriptLine.GetParameters()[1]);
+                        }
+                    }
+                    break;
+                case "math.sum":
+                    if (Memory.LockedCode == false)
+                    {
+
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[0] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[0] = Int32.Parse(scriptLine.GetParameters()[0]);
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[1] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[1] = Int32.Parse(scriptLine.GetParameters()[1]);
+                        }
+                        Memory.VarList[scriptLine.GetParameters()[2].TrimStart(new char[] { '$' })] = Convert.ToString(numbers[0] + numbers[1]);
+                    }
+                    break;
+                case "math.rest":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[0] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[0] = Int32.Parse(scriptLine.GetParameters()[0]);
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[1] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[1] = Int32.Parse(scriptLine.GetParameters()[1]);
+                        }
+                        Memory.VarList[scriptLine.GetParameters()[2].TrimStart(new char[] { '$' })] = Convert.ToString(numbers[0] - numbers[1]);
+                    }
+                    break;
+                case "math.multiply":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[0] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[0] = Int32.Parse(scriptLine.GetParameters()[0]);
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[1] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[1] = Int32.Parse(scriptLine.GetParameters()[1]);
+                        }
+                        Memory.VarList[scriptLine.GetParameters()[2].TrimStart(new char[] { '$' })] = Convert.ToString(numbers[0] * numbers[1]);
+                    }
+                    break;
+                case "math.divide":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[0] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[0] = Int32.Parse(scriptLine.GetParameters()[0]);
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[1] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[1] = Int32.Parse(scriptLine.GetParameters()[1]);
+                        }
+                        Memory.VarList[scriptLine.GetParameters()[2].TrimStart(new char[] { '$' })] = Convert.ToString(numbers[0] / numbers[1]);
+                    }
+                    break;
+                case "math.sqrt":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            numbers[0] = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
+                        }
+                        else
+                        {
+                            numbers[0] = Int32.Parse(scriptLine.GetParameters()[0]);
+                        }
+                        Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })] = Convert.ToString(Math.Sqrt(numbers[0]));
+                    }
+                    break;
+                case "join":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            texts[0] = Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })];
+                        }
+                        else
+                        {
+                            texts[0] = scriptLine.GetParameters()[0];
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                            texts[1] = Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })];
+                        }
+                        else
+                        {
+                            texts[1] = scriptLine.GetParameters()[1];
+                        }
+                        Memory.VarList[scriptLine.GetParameters()[2].TrimStart(new char[] { '$' })] = texts[0] + texts[1];
                     }
                     break;
                 case "//":break;
                 default: error = new Error("Unexist method", new ArgumentException()); break;
             }
         }
+        #endregion MethodsList
     }
 }

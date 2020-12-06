@@ -41,9 +41,7 @@
     <Compile Include="ArgonLine.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Function.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Nitrogen\" />
+    <Compile Include="Network.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

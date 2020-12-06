@@ -9,6 +9,7 @@ namespace Argon
             if(args.Length > 0)
             {
                 FileManager fm = new FileManager(args[0]);
+                Memory.CurrentFile = fm.GetAloneFileName();
                 Interpreter interpreter = new Interpreter(fm.Read());
                 interpreter.Run();
             }

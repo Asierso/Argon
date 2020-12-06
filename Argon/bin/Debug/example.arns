@@ -29,11 +29,30 @@ Functions
 
 function.external "external";
 print.line "Conserved changes";
-
+font "white";
 If Test
 
 function.open "iftest";
-print "Thats true";
+print.line "Thats true";
 function.close "iftest";
 if "0" "==" "0" "iftest()";
+
+Operate 
+
+var "operation" "0";
+math.sum "6" "4" "$operation";
+print.line "$operation";
+math.rest "$operation" "3" "$operation";
+print.line "$operation";
+math.multiply "$operation" "89" "$operation";
+print.line "$operation";
+math.divide "$operation" "2" "$operation";
+print.line "$operation";
+math.sqrt "$operation" "$operation";
+print.line "$operation";
+
+Joins
+var "myjoins" "0";
+join "hello" "world" "$myjoins";
+print.line "$myjoins";
 

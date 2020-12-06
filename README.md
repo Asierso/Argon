@@ -28,6 +28,14 @@ Argon brings some functions integrated but you can add your own instructions to 
 | function.open | FunctionName (Function)  |
 | function.close | FunctionName (Function)  |
 | if | ValueA (String/Int), Comparrator (Enum), ValueB (String/Int), Function (Function)  |
+| network.download.text | Url (String) |
+| network.download.file | Url (String), File (String) |
+| math.sum | Number (Int), Number (Int), Variable (Var) |
+| math.rest | Number (Int), Number (Int), Variable (Var) |
+| math.multiply | Number (Int), Number (Int), Variable (Var) |
+| math.divide | Number (Int), Number (Int), Variable (Var) |
+| math.sqrt | Number (Int), Variable (Var) |
+| join | Text (String), Text (String), Variable (Var) |
 
 To call variable, if their use is not explicit, you can called using this structure similar like php
 ```

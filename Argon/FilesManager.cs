@@ -58,6 +58,7 @@ namespace Argon
             if (File.Exists(file)) return true; else return false;
         }
         public void SetFile(string file) => this.file = file;
+        public string GetAloneFileName() => Path.GetFileNameWithoutExtension(file);
 
     }
 }
