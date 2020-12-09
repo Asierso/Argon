@@ -54,5 +54,8 @@ More things are comming soon.
 - .Net Framework +4.0 or Mono
 - Node.js (Any version)
 
-## v0.4.1
+## Linux
+The file ``` linux-install.sh ``` install argon executable in '/usr/bin/argon' and the plugins in '/usr/lib/argon-plugins'
+
+## Alert
 Some plugins in .js was added to complete the argon functionality. These plugins will be integrated in the Argon c# code
