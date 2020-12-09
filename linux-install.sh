@@ -1,6 +1,8 @@
 sudo echo "Requested sudo"
-echo "Installing argon"
+echo "Installing Argon"
 sudo cp Argon.exe /usr/bin/argon
 chmod a+x /usr/bin/argon
-echo "Install Sucess";
+echo "Install sucess, installing plugins folder";
+sudo cp -r Plugins ~/Plugins
+echo "Install sucess"
 echo "For use it, run 'argon' in your shell"

@@ -53,3 +53,6 @@ More things are comming soon.
 - Windows / Linux / MacOS
 - .Net Framework +4.0 or Mono
 - Node.js (Any version)
+
+## 0.4.1
+Some plugins in .js was added to complete the argon functionality. These plugins will be integrated in the Argon c# code
