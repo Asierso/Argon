@@ -42,6 +42,8 @@
     <Compile Include="Memory.cs" />
     <Compile Include="Function.cs" />
     <Compile Include="Network.cs" />
+    <Compile Include="JScript.cs" />
+    <Compile Include="IScriptModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

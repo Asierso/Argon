@@ -6,7 +6,7 @@ namespace Argon
     public class Methods
     {
         protected ArgonLine scriptLine;
-        protected string[] methods = {"//", "print.line", "print", "font" , "file.write.line", "file.write", "file.read.line","file.read", "var" , "function.external", "if" , "function.open" , "function.close","function", "start" , "network.download.text", "network.download.file" , "math.sum", "math.rest", "math.multiply", "math.divide" , "math.sqrt", "join"};
+        protected string[] methods = {"//", "print.line", "print", "font" , "file.write.line", "file.write", "file.read.line","file.read", "var" , "function.external", "if" , "function.open" , "function.close","function", "start" , "network.download.text", "network.download.file" , "math.sum", "math.rest", "math.multiply", "math.divide" , "math.sqrt", "join", "js.run.args","js.run"};
         public Methods(ArgonLine scriptLine)
         {
             this.scriptLine = scriptLine;
@@ -22,12 +22,14 @@ namespace Argon
                 }
             }
         }
+        public string[] GetMethodArray() => methods;
         #region MethodsList
         public virtual void ExecuteThing(string methodSingle)
         {
             FileManager fileManager = new FileManager(null);
             Network network = new Network(null);
             int[] numbers = new int[2];
+            string[] jsr = new string[2];
             string[] texts = new string[2];
             Error error;
             switch (methodSingle)
@@ -476,6 +478,45 @@ namespace Argon
                             texts[1] = scriptLine.GetParameters()[1];
                         }
                         Memory.VarList[scriptLine.GetParameters()[2].TrimStart(new char[] { '$' })] = texts[0] + texts[1];
+                    }
+                    break;
+                case "js.run":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            jsr[0] = Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })];
+                        }
+                        else
+                        {
+                            jsr[0] = scriptLine.GetParameters()[0];
+                        }
+                        JScript jScript = new JScript(jsr[0]);
+                        jScript.Run();
+                    }
+                    break;
+                case "js.run.args":
+                    if (Memory.LockedCode == false)
+                    {
+                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
+                        {
+                            jsr[0] = Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })];
+                        }
+                        else
+                        {
+                            jsr[0] = scriptLine.GetParameters()[0];
+                        }
+                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
+                        {
+                            jsr[1] = Memory.VarList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })];
+                        }
+                        else
+                        {
+                            jsr[1] = scriptLine.GetParameters()[1];
+                        }
+                        JScript jScript = new JScript(jsr[0]);
+                        jScript.SetArgs(jsr[1]);
+                        jScript.Run();
                     }
                     break;
                 case "//":break;

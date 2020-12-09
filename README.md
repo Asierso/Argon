@@ -12,30 +12,34 @@ Instruction "Parameter" "Parameter";
 Instruction ("Parameter","Parameter");
 ```
 Argon brings some functions integrated but you can add your own instructions to Argon core to extend his functions
-| Funtion | Aruments |
-| ---------------- | ------------------ |
-| print | Text (String)  |
-| print.line  | Text (String)  |
-| font | Color (String)  |
-| start | FileName (String), ExecutionArgs (String)  |
-| file.write | FileName (String), Text (String)  |
-| file.write.line | FileName (String), Text (String)  |
-| file.read | FileName (String), Variable (Var)  |
-| file.read.line | FileName (String), Variable (Var)  |
-| var | VariableName (Var), Value (String/Int)  |
-| function | FunctionName (Function)  |
-| function.external | ExternalFile (Arns)  |
-| function.open | FunctionName (Function)  |
-| function.close | FunctionName (Function)  |
-| if | ValueA (String/Int), Comparrator (Enum), ValueB (String/Int), Function (Function)  |
-| network.download.text | Url (String) |
-| network.download.file | Url (String), File (String) |
-| math.sum | Number (Int), Number (Int), Variable (Var) |
-| math.rest | Number (Int), Number (Int), Variable (Var) |
-| math.multiply | Number (Int), Number (Int), Variable (Var) |
-| math.divide | Number (Int), Number (Int), Variable (Var) |
-| math.sqrt | Number (Int), Variable (Var) |
-| join | Text (String), Text (String), Variable (Var) |
+| Function | Aruments | Details |
+| ---------------- | ------------------ | ---------------- |
+| print | Text (String)  | Print text in screen |
+| print.line  | Text (String)  | Print text in screen and \n |
+| font | Color (String)  | Change font color |
+| start | FileName (String), ExecutionArgs (String)  | Start a process |
+| file.write | FileName (String), Text (String)  | Write an string on a file |
+| file.write.line | FileName (String), Text (String)  | Write in a line an string on a file |
+| file.read | FileName (String), Variable (Var)  | Read the file |
+| file.read.line | FileName (String), Variable (Var)  | Read one line in file |
+| var | VariableName (Var), Value (String/Int)  | Create a var to save data |
+| function | FunctionName (Function)  | Call to a function |
+| function.external | ExternalFile (Arns)  | Call to an external function |
+| function.open | FunctionName (Function)  | Open declare of a function |
+| function.close | FunctionName (Function)  | Close declare of a function |
+| if | ValueA (String/Int), Comparrator (Enum), ValueB (String/Int), Function (Function)  | Conditional |
+| network.download.text | Url (String) | Download text of a web |
+| network.download.file | Url (String), File (String) | Download a file of a url |
+| math.sum | Number (Int), Number (Int), Variable (Var) | Sum 2 numbers |
+| math.rest | Number (Int), Number (Int), Variable (Var) | Rest 2 numbers |
+| math.multiply | Number (Int), Number (Int), Variable (Var) | Multiply 2 numbers |
+| math.divide | Number (Int), Number (Int), Variable (Var) | Divide 2 numbers |
+| math.sqrt | Number (Int), Variable (Var) | Sqrt 2 numbers |
+| join | Text (String), Text (String), Variable (Var) | Join 2 strings |
+| js.run | JSFileName (String) | Run an .js with node |
+| js.run.args|  JSFileName (String), ExecutionArgs (String) | Run an .js containing arguments with node |
+
+
 
 To call variable, if their use is not explicit, you can called using this structure similar like php
 ```
@@ -44,3 +48,8 @@ To call variable, if their use is not explicit, you can called using this struct
 ## Wait
 Remind that this is only an a experimental version in development. There have bugs and a few things to use. 
 More things are comming soon.
+
+## Requirements
+- Windows / Linux / MacOS
+- .Net Framework +4.0 or Mono
+- Node.js (Any version)
