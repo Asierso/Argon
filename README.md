@@ -40,6 +40,7 @@ Argon brings some functions integrated but you can add your own instructions to 
 | js.run.args |  JSFileName (String), ExecutionArgs (String), Variable (Var) | Run an .js containing arguments with node |
 | js.run.print |  JSFileName (String) | Run an .js containing arguments with node amd print them |
 | js.run.args.print |  JSFileName (String), ExecutionArgs (String) | Run an .js containing arguments with node and print them |
+| wait |  Number (Int) | Wait a lapse of time |
 
 
 
