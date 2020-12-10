@@ -1,0 +1,9 @@
+var "a" "";
+
+function.open "exec";
+print.line "pinguin";
+function.close "exec";
+
+js.run.args "../../Plugins/os.js" "-osname" "$a";
+print "$a";
+if "$a" "==" "linux" "exec()";

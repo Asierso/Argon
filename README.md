@@ -36,8 +36,10 @@ Argon brings some functions integrated but you can add your own instructions to 
 | math.divide | Number (Int), Number (Int), Variable (Var) | Divide 2 numbers |
 | math.sqrt | Number (Int), Variable (Var) | Sqrt 2 numbers |
 | join | Text (String), Text (String), Variable (Var) | Join 2 strings |
-| js.run | JSFileName (String) | Run an .js with node |
-| js.run.args|  JSFileName (String), ExecutionArgs (String) | Run an .js containing arguments with node |
+| js.run | JSFileName (String), Variable (Var) | Run an .js with node |
+| js.run.args |  JSFileName (String), ExecutionArgs (String), Variable (Var) | Run an .js containing arguments with node |
+| js.run.print |  JSFileName (String) | Run an .js containing arguments with node amd print them |
+| js.run.args.print |  JSFileName (String), ExecutionArgs (String) | Run an .js containing arguments with node and print them |
 
 
 

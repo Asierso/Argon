@@ -8,20 +8,20 @@ switch(process.argv[2]){
     case "-hostname":getHostname(); break;
 }
 function getOSName(){
-    console.log(os.platform);
+    console.log(os.platform + "");
 }
 function getOSVersion(){
-    console.log(os.release);
+    console.log(os.release + "");
 }
 function getFreemem(){
-    console.log(os.freemem);
+    console.log(os.freemem + "");
 }
 function getOS(){
     console.log(os.platform + " " + os.release);
 }
 function getTotalmem(){
-    console.log(os.totalmem);
+    console.log(os.totalmem + "");
 }
 function getHostname(){
-    console.log(os.hostname);
+    console.log(os.hostname + "");
 }

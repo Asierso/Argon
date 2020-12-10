@@ -1,0 +1,15 @@
+var "a" "";
+print "Hi ";
+js.run.args.print "Plugins/os.js" "-hostname";
+function.open "linux_user";
+font "red";
+print.line "You are using linux";
+function.close "linux_user";
+function.open "win32_user";
+font "blue";
+print.line "You are using windows";
+function.close "win32_user";
+
+js.run.args "Plugins/os.js" "-osname" "$a";
+if "$a" "==" "linux" "linux_user()";
+if "$a" "==" "win32" "win32_user()";
