@@ -7,7 +7,7 @@ namespace Argon
     public class Methods
     {
         protected ArgonLine scriptLine;
-        protected string[] methods = {"//", "print.line", "font" , "file.write.line", "file.write", "file.read.line","file.read", "var" , "function.external", "if" , "function.open" , "function.close","function", "start" , "network.download.text", "network.download.file" , "math.sum", "math.rest", "math.multiply", "math.divide" , "math.sqrt", "join","js.run.args.print", "js.run.args","js.run.print","js.run","print","wait","input","ui.window.position.x","ui.window.position.y","ui.window.title","ui.run","ui"};
+        protected string[] methods = {"//", "print.line", "font" , "file.write.line", "file.write", "file.read.line","file.read", "var" , "function.external", "if" , "function.open" , "function.close","function", "start" , "network.download.text", "network.download.file" , "math.sum", "math.rest", "math.multiply", "math.divide" , "math.sqrt", "join","js.run.args.print", "js.run.args","js.run.print","js.run","print","wait","input"};
         public Methods(ArgonLine scriptLine)
         {
             this.scriptLine = scriptLine;
@@ -600,106 +600,6 @@ namespace Argon
                         else
                         {
                             Console.ReadLine();
-                        }
-                    }
-                        break;
-                case "ui":
-                    if (Memory.LockedCode == false)
-                    {
-                        Memory.UiList.Add(scriptLine.GetParameters()[0], new Ui());
-                    }
-                    break;
-                case "ui.window.title":
-                    if (Memory.LockedCode == false)
-                    {
-                        string title = "";
-                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
-                        {
-                            title = Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })];
-                        }
-                        else
-                        {
-                            title = scriptLine.GetParameters()[0];
-                        }
-                        if (scriptLine.GetParameters()[1].Contains("$") && Memory.UiList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
-                        {
-                            Memory.UiList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })].windowTitle = title;
-                        }
-                        else
-                        {
-                            UiError();
-                        }
-                    }
-                    break;
-                case "ui.window.position.x":
-                    if (Memory.LockedCode == false)
-                    {
-                        int pos = 0;
-                        try
-                        {
-                            if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
-                            {
-                                pos = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
-                            }
-                            else
-                            {
-                                pos = Int32.Parse(scriptLine.GetParameters()[0]);
-                            }
-                            if (scriptLine.GetParameters()[1].Contains("$") && Memory.UiList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
-                            {
-                                Memory.UiList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })].posX = pos;
-                            }
-                            else
-                            {
-                                UiError();
-                            }
-                        }
-                        catch(Exception ex)
-                        {
-                            error = new Error("You have to put a number", ex);
-                        }
-                    }
-                    break;
-                case "ui.window.position.y":
-                    if (Memory.LockedCode == false)
-                    {
-                        int pos = 0;
-                        try
-                        {
-                            if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
-                            {
-                                pos = Int32.Parse(Memory.VarList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })]);
-                            }
-                            else
-                            {
-                                pos = Int32.Parse(scriptLine.GetParameters()[0]);
-                            }
-                            if (scriptLine.GetParameters()[1].Contains("$") && Memory.UiList.ContainsKey(scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })))
-                            {
-                                Memory.UiList[scriptLine.GetParameters()[1].TrimStart(new char[] { '$' })].posY = pos;
-                            }
-                            else
-                            {
-                                UiError();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            error = new Error("You have to put a number", ex);
-                        }
-                    }
-                    break;
-                case "ui.run":
-                    if (Memory.LockedCode == false)
-                    {
-                        string title = "";
-                        if (scriptLine.GetParameters()[0].Contains("$") && Memory.VarList.ContainsKey(scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })))
-                        {
-                            Memory.UiList[scriptLine.GetParameters()[0].TrimStart(new char[] { '$' })].Run();
-                        }
-                        else
-                        {
-                            title = scriptLine.GetParameters()[0];
                         }
                     }
                     break;

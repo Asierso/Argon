@@ -1,6 +1,5 @@
-## Argon / Open ARN
 ![Alt text](Images/title.png?raw=true "Title")
-# Multiplatform application framework
+# Argon - Multiplatform application framework
 Based in MScript for scripts *.arns.
 
 ## Syntax
@@ -42,7 +41,7 @@ Argon brings some functions integrated but you can add your own instructions to 
 | js.run.print |  JSFileName (String) | Run an .js containing arguments with node amd print them |
 | js.run.args.print |  JSFileName (String), ExecutionArgs (String) | Run an .js containing arguments with node and print them |
 | wait |  Number (Int) | Wait a lapse of time |
-
+| input |  Variable (Var) | Get text introduced in terminal |
 
 
 To call variable, if their use is not explicit, you can called using this structure similar like php
@@ -56,7 +55,7 @@ More things are comming soon.
 ## Requirements
 - Windows / Linux / MacOS
 - .Net Framework +4.0 or Mono
-- Node.js (Any version)
+- Node.js (Any version) with npm
 
 ## Alert
 Some plugins in .js was added to complete the argon functionality. These plugins will be integrated in the Argon c# code
