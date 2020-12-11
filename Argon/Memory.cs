@@ -6,6 +6,7 @@ namespace Argon
     {
         //Public memory arrays of code interpreter
         public static Dictionary<String, String> VarList = new Dictionary<string, string>();
+        public static Dictionary<String, Ui> UiList = new Dictionary<string, Ui>();
         public static Dictionary<String, String> FunctionList = new Dictionary<string, string>(); 
         public static string FileReaded;
         public static string CurrentFile;

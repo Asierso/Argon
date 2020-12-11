@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{89A3DBD7-CA77-42B4-BBCA-EFB26F8A1208}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Argon/FilesManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Argon/Ui.cs">
     <Files>
       <File FileName="Argon/FilesManager.cs" Line="61" Column="84" />
       <File FileName="Argon/Interpreter.cs" Line="10" Column="10" />
       <File FileName="Argon/Error.cs" Line="21" Column="51" />
-      <File FileName="Argon/Methods.cs" Line="291" Column="22" />
+      <File FileName="Argon/Methods.cs" Line="617" Column="42" />
       <File FileName="Argon/ArgonLine.cs" Line="17" Column="1" />
-      <File FileName="Argon/Memory.cs" Line="15" Column="1" />
+      <File FileName="Argon/Memory.cs" Line="9" Column="92" />
       <File FileName="Argon/Function.cs" Line="30" Column="1" />
       <File FileName="Argon/Program.cs" Line="12" Column="18" />
       <File FileName="Argon/Network.cs" Line="10" Column="10" />
-      <File FileName="Argon/JScript.cs" Line="11" Column="43" />
+      <File FileName="Argon/JScript.cs" Line="31" Column="41" />
+      <File FileName="Argon/Ui.cs" Line="6" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +19,7 @@
           <Node name="Argon" expanded="True">
             <Node name="Argon" expanded="True">
               <Node name="Properties" expanded="True" />
-              <Node name="FilesManager.cs" selected="True" />
+              <Node name="Ui.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -32,4 +33,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <AuthorInfo Name="Asierso" Email="asier@asierso.com" Copyright="Asierso Studio" Company="" Trademark="" />
 </Properties>
