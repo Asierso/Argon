@@ -1,5 +1,6 @@
 ![Alt text](Images/title.png?raw=true "Title")
-# Argon - Multiplatform application framework
+# Argon framework
+Is a new programming languaje that is easy to use. With basic functionalities for starters. Writed on c#. You can develop plugins in js or modify the Argon core.
 Based in MScript for scripts *.arns.
 
 ## Syntax
