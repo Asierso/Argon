@@ -1,0 +1,10 @@
+System.IO.FileNotFoundException: Could not find file "/home/asier/Projects/Argon/ejem"
+File name: '/home/asier/Projects/Argon/ejem'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <d13c8b563008422a8c5aaec0a74089cc>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <d13c8b563008422a8c5aaec0a74089cc>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <d13c8b563008422a8c5aaec0a74089cc>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x00007] in <d13c8b563008422a8c5aaec0a74089cc>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <d13c8b563008422a8c5aaec0a74089cc>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at Argon.FileManager.Read () [0x00008] in <85931d1275a8477eb5ad2421842028df>:0 
